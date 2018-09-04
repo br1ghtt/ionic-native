@@ -82,6 +82,20 @@ export interface MediaType {
   value: string;
 }
 
+export interface Resource {
+  uri: string;
+  attributes: Attribute[];
+}
+
+export interface Attribute {
+  key: string;
+  values: AttributeValue[];
+}
+
+export interface AttributeValue {
+  value: string;
+}
+
 /**
  * @name coap-client
  * @description
@@ -117,25 +131,24 @@ export class CoapClient extends IonicNativePlugin {
   get(options: RequestOptions): Promise<CoapResponse> {
     return;
   }
-  @Cordova()
-  get2(options: RequestOptions): Promise<CoapResponse> {
-    return;
-  }
+
   @Cordova()
   post(options: RequestOptions): Promise<CoapResponse> {
     return;
   }
+
   @Cordova()
   put(options: RequestOptions): Promise<CoapResponse> {
     return;
   }
+
   @Cordova()
   delete(options: RequestOptions): Promise<CoapResponse> {
     return;
   }
 
   @Cordova()
-  discover(options: RequestOptions): Promise<string> {
+  discover(options: RequestOptions): Promise<Resource[]> {
     return;
   }
 
